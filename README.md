@@ -5,7 +5,7 @@ _Generate wallpapers given chapter and verse number of the Bible_
 ## Preparation
 1. Clone this repository
 ```bash
-git clone 
+git clone https://github.com/ruiyiw/bible-wallpaper.git
 ```
 
 2. Create python virtual environment and activate the environment
