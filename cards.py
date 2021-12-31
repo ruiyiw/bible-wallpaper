@@ -4,16 +4,6 @@ import config
 import esv
 import argparse
 
-# text = "Hello World Hello World Hello World Hello World Hello World Hello World Hello World "
-# img = Image.open("basic.png")
-# img_ed = ImageDraw.Draw(img)
-# img_ed.text((15,15), text, (237, 230, 211))
-# img.save("test.png")
-
-# parser = argparse.ArgumentParser(description="Generate wallpapers for Bible Verses")
-# parser.add_argument("--volume-cn", help="Enter the volume in Chinese")
-# parser.add_argument("")
-
 
 class BibleCn():
     def __init__(self):
@@ -219,15 +209,5 @@ draw_card = DrawCard(x=config.x, y=config.y, pic=config.pic, font_en=config.font
 
 # Generate single verse
 draw_card.add_text(bible_cn.get_verse_by_index(verse_cn, config.chapter, config.number))
-
-
-
-
-
-
-
-
-
-
 
 
