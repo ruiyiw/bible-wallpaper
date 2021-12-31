@@ -3,13 +3,18 @@ _Generate wallpapers given chapter and verse number of the Bible_
 
 
 ## Preparation
-1. Create python virtual environment and activate the environment
+1. Clone this repository
+```bash
+git clone 
+```
+
+2. Create python virtual environment and activate the environment
 ```bash
 python3 -m venv env
 source env/bin/activate
 ```
 
-2. Install relevant packages via pip
+3. Install relevant packages via pip
 ```bash
 pip install -r requirements.txt
 ```
