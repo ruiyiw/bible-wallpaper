@@ -36,20 +36,6 @@ def get_verse(volume, chapter, number)->str:
             index = i
             break
     
-    # for i in range(len(raw)):
-    #     for w in list(raw[i]):
-    #         print(w)       
 
     verse = raw[index+1:len(raw)]
     return " ".join(verse)
-
-# if __name__ == '__main__':
-#     # passage = ' '.join(sys.argv[1:])
-
-#     # # if passage:
-#     # passage = 'John 21:24'
-#     # get_esv_text(passage)
-#     string = "你好吗啦啦啦的风i和iu饿鬼地方"
-#     # a = list(u"你好吗")
-#     a = list(string.encode("utf-8").decode("utf-8"))
-#     print(list(string))
