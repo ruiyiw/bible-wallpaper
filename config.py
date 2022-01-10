@@ -7,6 +7,8 @@ parser.add_argument("--volume_cn", type=str, default="罗马书", help="Volume n
 parser.add_argument("--volume_en", type=str, default="Romans", help="Volume name in English")
 parser.add_argument("-c", "--chapter", type=int, default=1, help="Chapter number")
 parser.add_argument("-v", "--verse", type=int, default=7, help="Verse number")
+parser.add_argument("--range1", type=int, default=1, help="Range of verse numbers: [range1, range2]")
+parser.add_argument("--range2", type=int, default=7, help="Range of verse numbers: [range1, range2]")
 
 arg = parser.parse_args()
 bible_cn = "data/bible_chinese.db"
@@ -18,6 +20,8 @@ volume_cn = arg.volume_cn
 volume_en = arg.volume_en
 chapter = arg.chapter
 number = arg.verse
+range1 = arg.range1
+range2 = arg.range2
 x = 750
 y = 1500
 font_en = ImageFont.truetype(os.path.join(os.getcwd(), "data/Georgia.ttf"), 140)

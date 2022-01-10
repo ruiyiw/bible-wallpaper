@@ -21,7 +21,8 @@ pip install -r requirements.txt
 
 ## Usage
 ```bash
-usage: cards.py [-h] [--volume_cn VOLUME_CN] [--volume_en VOLUME_EN] [-c CHAPTER] [-v VERSE]
+usage: cards.py [-h] [--volume_cn VOLUME_CN] [--volume_en VOLUME_EN] [-c CHAPTER]
+                [-v VERSE] [--range1 RANGE1] [--range2 RANGE2]
 
 Generate CN/EN wallpapers given the chapter and verse number of the Bible.
 
@@ -35,10 +36,15 @@ optional arguments:
                         Chapter number
   -v VERSE, --verse VERSE
                         Verse number
+  --range1 RANGE1       Range of verse numbers: [range1, range2]
+  --range2 RANGE2       Range of verse numbers: [range1, range2]
 ```
 **Example**
 ```bash
+# generate verse no.7 of chapter 1 in Romans both in Chinese and English
 python3 cards.py --volume_cn 罗马书 --volume_en Romans -c 1 -v 7
+# generate verses through no.1 to no. 5 of chapter 2 in Hebrews both in Chinese and English
+python3 cards.py --volume_cn 希伯来书 --volume_en Hebrews -c 2 --range1 1 --range2 5 
 ```
 
 ## Sample

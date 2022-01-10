@@ -208,6 +208,9 @@ draw_card = DrawCard(x=config.x, y=config.y, pic=config.pic, font_en=config.font
 #     draw_card.add_text(verse_cn[i])
 
 # Generate single verse
-draw_card.add_text(bible_cn.get_verse_by_index(verse_cn, config.chapter, config.number))
+# draw_card.add_text(bible_cn.get_verse_by_index(verse_cn, config.chapter, config.number))
 
-
+# Generate verses in a range
+for i in range(config.range1, config.range2+1, 1):
+    draw_card = DrawCard(x=config.x, y=config.y, pic=config.pic, font_en=config.font_en, font_cn=config.font_cn, max_width=config.max_width, color=config.color)
+    draw_card.add_text(bible_cn.get_verse_by_index(verse_cn, config.chapter, i))
