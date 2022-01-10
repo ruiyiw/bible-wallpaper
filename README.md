@@ -47,5 +47,8 @@ python3 cards.py --volume_cn 罗马书 --volume_en Romans -c 1 -v 7
 python3 cards.py --volume_cn 希伯来书 --volume_en Hebrews -c 2 --range1 1 --range2 5 
 ```
 
+**Note**
+You need to make sure that the volume names are correct and the chapters/verse numbers are not out of range.
+
 ## Sample
 ![111531640988411_ pic_hd](https://user-images.githubusercontent.com/76935534/147840597-143608ce-e4e3-4080-9208-59472a182ff6.jpg)
