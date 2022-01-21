@@ -52,7 +52,7 @@ class BibleESV():
 
 
 class DrawCard():
-    def __init__(self, x, y, pic, font_en, font_cn, max_width, color):
+    def __init__(self, x, y, pic, font_en, font_cn, max_width, color, color_head, interval):
         self.img = Image.open(pic)
         self.draw = ImageDraw.Draw(self.img)
         self.x = x
@@ -61,6 +61,8 @@ class DrawCard():
         self.font_cn = font_cn
         self.max_width = max_width
         self.color = color
+        self.color_head = color_head
+        self.interval = interval
 
     def text_wrap(self, text, font, lang)->list:
         lines = []
@@ -99,12 +101,13 @@ class DrawCard():
             line_meta = "["+config.volume_cn+" "+str(chapter)+":"+str(number)+"]"
             line_height = font.getsize('国')[1] + 50
 
-        self.draw.text((self.x,self.y), line_meta, fill='rgb(192,192,192)', font=font)
+        self.draw.text((self.x,self.y), line_meta, fill=self.color_head, font=font)
         self.y = self.y + line_height
 
     def draw_text(self, text, font, lang):
         if lang == 'en':
-            line_height = self.font_en.getsize('hg')[1] + 50
+            # line_height = self.font_en.getsize('hg')[1] + 50
+            line_height = self.font_en.getsize('hg')[1] + 30
         if lang == 'cn':
             line_height = self.font_cn.getsize('国')[1]
         
@@ -189,7 +192,7 @@ class DrawCard():
         
         self.draw_meta(chapter, number, self.font_cn, 'cn')
         self.draw_text(text_cn, self.font_cn, 'cn')
-        self.y = self.y + 300
+        self.y = self.y + self.interval
         self.draw_meta(chapter, number, self.font_en, 'en')
         self.draw_text(text_en, self.font_en, 'en')
         
@@ -202,15 +205,15 @@ class DrawCard():
 bible_cn = BibleCn()
 verse_cn = bible_cn.run(config.volume_cn)
 
-draw_card = DrawCard(x=config.x, y=config.y, pic=config.pic, font_en=config.font_en, font_cn=config.font_cn, max_width=config.max_width, color=config.color)
+draw_card = DrawCard(x=config.x, y=config.y, pic=config.pic, font_en=config.font_en, font_cn=config.font_cn, max_width=config.max_width, color=config.color, color_head=config.color_head, interval=config.interval)
 # Generate full list
 # for i in range(len(verse_cn)):
 #     draw_card.add_text(verse_cn[i])
 
 # Generate single verse
-# draw_card.add_text(bible_cn.get_verse_by_index(verse_cn, config.chapter, config.number))
+draw_card.add_text(bible_cn.get_verse_by_index(verse_cn, config.chapter, config.number))
 
-# Generate verses in a range
-for i in range(config.range1, config.range2+1, 1):
-    draw_card = DrawCard(x=config.x, y=config.y, pic=config.pic, font_en=config.font_en, font_cn=config.font_cn, max_width=config.max_width, color=config.color)
-    draw_card.add_text(bible_cn.get_verse_by_index(verse_cn, config.chapter, i))
+# # Generate verses in a range
+# for i in range(config.range1, config.range2+1, 1):
+#     draw_card = DrawCard(x=config.x, y=config.y, pic=config.pic, font_en=config.font_en, font_cn=config.font_cn, max_width=config.max_width, color=config.color, color_head=config.color_head, interval=config.interval)
+#     draw_card.add_text(bible_cn.get_verse_by_index(verse_cn, config.chapter, i))

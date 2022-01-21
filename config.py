@@ -25,12 +25,17 @@ range1 = arg.range1
 range2 = arg.range2
 # x = 750
 # y = 1500
-x = 850
-y = 500
+x = 350
+y = 600
 # font_en = ImageFont.truetype(os.path.join(os.getcwd(), "data/Georgia.ttf"), 140)
 # font_cn = ImageFont.truetype(os.path.join(os.getcwd(), "data/NotoSerifSC-Regular.otf"), 140)
-font_en = ImageFont.truetype(os.path.join(os.getcwd(), "data/Georgia.ttf"), 80)
-font_cn = ImageFont.truetype(os.path.join(os.getcwd(), "data/NotoSerifSC-Regular.otf"), 80)
-max_width = 2000
+font_en = ImageFont.truetype(os.path.join(os.getcwd(), "data/Georgia.ttf"), 70)
+font_cn = ImageFont.truetype(os.path.join(os.getcwd(), "data/NotoSerifSC-Regular.otf"), 70)
+# max_width = 2000
+max_width = 1000
 
 color = 'rgb(0,0,0)'
+color_head = 'rgb(64,64,64)'
+
+# interval = 300
+interval = 150
